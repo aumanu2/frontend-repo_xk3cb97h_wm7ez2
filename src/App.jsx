@@ -1,28 +1,46 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Features from './components/Features';
+import Pricing from './components/Pricing';
+import CTA from './components/CTA';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-white text-gray-900">
+      <Navbar />
+      <main>
+        <Hero />
+        <Features />
+        <Pricing />
+        <CTA />
+      </main>
+      <footer id="about" className="border-t border-gray-200">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 text-sm text-gray-600">
+          <div className="sm:col-span-2">
+            <h3 className="text-base font-semibold text-gray-900">FitFlow CRM</h3>
+            <p className="mt-2 max-w-md">A modern client management platform built for coaches, trainers, and studios. Spend less time on admin, more time coaching.</p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-gray-900">Product</h4>
+            <ul className="mt-2 space-y-1">
+              <li><a href="#features" className="hover:text-gray-900">Features</a></li>
+              <li><a href="#pricing" className="hover:text-gray-900">Pricing</a></li>
+              <li><a href="#" className="hover:text-gray-900">Updates</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold text-gray-900">Company</h4>
+            <ul className="mt-2 space-y-1">
+              <li><a href="#about" className="hover:text-gray-900">About</a></li>
+              <li><a href="#" className="hover:text-gray-900">Careers</a></li>
+              <li><a href="#" className="hover:text-gray-900">Contact</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
+        <div className="py-6 text-center text-xs text-gray-500">© {new Date().getFullYear()} FitFlow CRM. All rights reserved.</div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
